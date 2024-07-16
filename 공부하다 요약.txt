@@ -45,11 +45,9 @@ push안될때
 537e856aefa0a5399b8a3df67f43414d8377469e refs/heads/master
 7aab82f84a5e727f3e9802e5d8c9b08eb1788716 refs/remotes/origin/main
 와 같이 나옴 (내가 push하고자 하는 branch는 main인데 현재 가리키는 branch는 master로 상이함)
->>git branch -m [변경 전 브랜치명] [변경 후 브랜치명] 로 변경후 push하면 잘 됨.
+>>git branch -m [변경 전 브랜치명] [변경 후 브랜치명] 로 변경후 push하면 잘 됨. ex: git branch -m master main
 
-git pull은 local에 이미 자료가 있는 상태에서 remote의 수정본을 추가 반영할 경우 사용되고, 
-git clone은 remote의 내용을 온전히 가져와 덮어쓰기 때문에 local에 자료가 없는 상태에서 사용. 
-예시로는 진행중인 프로젝트에 첫 도입되었을 때 git clone 사용하는 케이스가 있음
+
 -----------------------------------------------------------------------------------------------
 2-05에서 이어서 시작.
 
