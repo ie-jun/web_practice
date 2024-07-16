@@ -1,0 +1,57 @@
+1)SQLALchemy에서 제공하는 다양한 속성들.
+https://docs.sqlalchemy.org/en/13/core/type_basics.html
+
+2)
+flask 실행  - flask run
+flask 셸 실행 - flask shell
+> 둘다 flask_project 폴더 내에서 실행함.
+
+3)
+커밋은 취소할 수 없다는 점에 유의하자. 
+커밋은 일종의 "결정사인" 역할을 한다고 생각하면 이해하기 쉽다. 
+그래서 수행한 작업을 취소하려면 커밋 이전에 진행해야 한다. 
+이때 작업을 취소하고 싶으면 db.session.rollback()으로 되돌리기(롤백)를 실행하면 된다.
+
+4)
+데이터를 조회하는 다양한 사용법은 SQLAlchemy공식 문서를 참조하자.
+
+SQLAlchemy 공식 문서: https://docs.sqlalchemy.org/en/13/orm/query.html
+
+5)깃 설명
+1. 새로운 가상환경을 판다.
+2. 특정 폴더에 가져오고 싶은 모델들이 구현된 깃헙에서 clone해온다. (확실히는 안해봐서 한번 해봐야함)
+3. 내 개인 repository를 새롭게 만든다.
+4. 가상환경 들어간 상태에서 이하의 명령어 실행
+git init (git 저장소를 초기화 함 / 명령 실행한 디렉토리에 .git  숨김 폴더 생성됨)
+git add . (clone해온 root 폴더에서)(스테이징 영역에 추가하는 것임)
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/ie-jun/{새롭게 만든 내 개인 repository 이름}.git
+git push -u origin main 
+5. 이제 git push와 git pull 명령어를 통해 원격 저장소와 코드를 동기화 해나감
+git pull origin main (만약 다른 repo로 옮겨서 pull 해오고 싶다면  git remote set-url origin https://github.com/ie-jun/{옮기려는 repository 이름}.git 해주기)
+이제 그상태에서 내용 잘 변경하고 git add . (잘 스테이징 영역에 올라갔는지 확인은 git status 하는데 더할거 없으면 nothing to commit 나옴)
+git commit -m "커밋내용 설명할 메세지" 해주기.
+git push origin main 하면 완료. (push안되면 branch명 맞는지 git show-ref로 확인후 heads/가 가르키는 branch 다르면 변경)
+
++
+현재 git의 최상위 디렉토리 파악
+git rev-parse --show-toplevel
+연결된 저장소 확인
+git remote -v
+
+push안될때
+>git show-ref 해보면 
+537e856aefa0a5399b8a3df67f43414d8377469e refs/heads/master
+7aab82f84a5e727f3e9802e5d8c9b08eb1788716 refs/remotes/origin/main
+와 같이 나옴 (내가 push하고자 하는 branch는 main인데 현재 가리키는 branch는 master로 상이함)
+>>git branch -m [변경 전 브랜치명] [변경 후 브랜치명] 로 변경후 push하면 잘 됨.
+
+git pull은 local에 이미 자료가 있는 상태에서 remote의 수정본을 추가 반영할 경우 사용되고, 
+git clone은 remote의 내용을 온전히 가져와 덮어쓰기 때문에 local에 자료가 없는 상태에서 사용. 
+예시로는 진행중인 프로젝트에 첫 도입되었을 때 git clone 사용하는 케이스가 있음
+-----------------------------------------------------------------------------------------------
+2-05에서 이어서 시작.
+
+
+
