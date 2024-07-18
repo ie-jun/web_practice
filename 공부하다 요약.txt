@@ -73,9 +73,37 @@ https://jinja.palletsprojects.com/en/2.11.x/templates
 url_for 함수를 통해 템플릿에서 라우팅 함수명으로 URL을 역으로 찾음
 >유지보수가 쉬워짐
 
+8)
+from pybo import db
+db는 __init__.py파일에 있는 SQLAlchemy클래스의 객체임..
+
+9)
+{{ question.answer_set|length }}에서 length는 템플릿 필터고 객체의 길이를 반환해줌.
+
+더 많은 템플릿 필터는 아래 링크에
+https://jinja.palletsprojects.com/en/2.11.x/templates/#builtin-filters
+
+10)
+flask shell 명령어로 들어간 후,
+Question.query.all() 로 질문들 뭐있는지 확인 가능. 
+2번 질문 있는 것 확인하면,
+q = Question.query.get(2)
+a= Answer(question =q, content = 'id는 기본 키입니다', create_date = datetime.now())
+db.session.add(a)
+db.session.commit()
+
+삭제 원하면
+q = Question.query.get(1)
+db.session.delete(q)
+db.session.commit()
+
+11)
+
+
 -----------------------------------------------------------------------------------------------
 2-05 전 까지 진행(24/07/17)
 2-06 전 까지 진행(24/07/18)
+2-07 전 까지 진행(24/07/19)
 
 
 
