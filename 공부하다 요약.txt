@@ -98,12 +98,43 @@ db.session.delete(q)
 db.session.commit()
 
 11)
+필요하다면 부트스트랩 추가 공부 진행 가
+부트스트랩 공식 문서: * https://getbootstrap.com/docs/5.1/getting-started/introduction/
+
+12)
+플라스크에서 사용할 수 있는 폼 속성에 대한 보다 자세한 내용은 다음 URL을 참고하자.
+
+https://wtforms.readthedocs.io/en/2.3.x/fields/#basic-fields
+
+13)
+form 태그에 action 속성을 지정하지 않으면 현재 페이지의 URL이 디폴트 action으로 설정된다.
+
+14)
+zip파일로 저장한 db를 가져와서 실행하니까 오류떠서
+flask db migrate -m "Initial migration."
+flask db upgrade
+위에서 upgrade만 먹혀서 해주니 오류는 풀림 but 질문들이 사라져있음..
+
+15)
+수작업으로 폼 작성하기
+{{ form.subject() }}처럼 폼을 생성하는 HTML 코드를 자동으로 생성은 원하는 디자인을 적용하기가 어렵다. 
+이러한 단점을 보완하고자 이번에는 HTML을 직접 작성하는 것이 좋음 (question_form.html)
+
+16)
+2-10 오류내용을 표시해 원인 알아내기 부분에서 못보던 <div class "form-group">이 있길래 무시하고 그냥
+폼을 생성하는 html코드에 나온 부분 앞에 <오류표시><오류표시끝>으로 해서 <from method ="post" class "post-form my-3">이하에 넣어줬더니 동작했음.
+
+17)
+
+
 
 
 -----------------------------------------------------------------------------------------------
 2-05 전 까지 진행(24/07/17)
 2-06 전 까지 진행(24/07/18)
 2-07 전 까지 진행(24/07/19)
+2-10 수작업으로 폼 작성하기 전까지 진행(24/07/21)
+
 
 
 
